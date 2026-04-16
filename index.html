@@ -4,14 +4,29 @@
   <title>To Dream</title>
 
   <style>
-    /* 🌊 PALE AQUA BACKGROUND */
     body {
       background-color: #bfeeee;
       margin: 0;
       font-family: Playfair Display, serif;
     }
 
-    /* ✍️ AUTHOR MESSAGE BOX */
+    /* 🔎 SEARCH BAR */
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .search-box input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    /* ✍️ AUTHOR BOX */
     .author-box {
       margin: 20px;
       padding: 20px;
@@ -20,27 +35,36 @@
       text-align: center;
     }
 
-    .author-box h2 {
-      margin-bottom: 10px;
-    }
-
-    /* 📚 TITLE */
     h1 {
       text-align: center;
       margin-top: 10px;
     }
 
-     /* 📚 GRID (2 PER ROW) */
+    /* 📂 CATEGORY BUTTONS */
+    .categories {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .categories button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* 📚 GRID */
     .story-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
       max-width: 800px;
       margin: auto;
     }
 
-    /* 📦 STORY CARD */
+    /* 📦 CARD */
     .story-card {
       text-decoration: none;
       color: black;
@@ -48,17 +72,16 @@
       transition: 0.2s;
     }
 
-    /* 🖼️ COVER IMAGE */
     .story-card img {
-  width: 100%;
-  height: 400px;   
-  object-fit: cover;
-  border-radius: 12px;
-}
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
 
-    /* ✨ HOVER EFFECT */
     .story-card:hover img {
       transform: scale(1.05);
+      transition: 0.2s;
     }
 
     .story-card p {
@@ -66,14 +89,7 @@
       font-weight: bold;
     }
 
-    /* 📱 TABLET */
-    @media (max-width: 768px) {
-      .story-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* 📱 PHONE */
+    /* 📱 MOBILE */
     @media (max-width: 480px) {
       .story-container {
         grid-template-columns: 1fr;
@@ -84,42 +100,80 @@
 
 <body>
 
-  <!-- ✍️ AUTHOR MESSAGE -->
+  <!-- ✍️ AUTHOR -->
   <div class="author-box">
     <h2>Love, Saiki</h2>
     <p>
       Welcome to my little space where I share my stories. ✨<br>
-      Every story here is made with effort and emotion, and I hope you find something meaningful in them.<br>
       Thank you for reading 💖
     </p>
   </div>
 
   <h1>To Dream</h1>
 
-  <!-- 📚 STORIES -->
+  <!-- 🔎 SEARCH -->
+  <div class="search-box">
+    <input type="text" id="searchBar" placeholder="Find story..." onkeyup="searchStories()">
+  </div>
+
+  <!-- 📂 CATEGORIES -->
+  <div class="categories">
+    <button onclick="filterStories('all')">All</button>
+    <button onclick="filterStories('romance')">Romance</button>
+    <button onclick="filterStories('series')">Series</button>
+  </div>
+
+  <!-- 🆕 NEW SECTION -->
+  <h2 style="text-align:center;">🆕 New Stories</h2>
+
   <div class="story-container">
 
-    <a href="betting-despite-odds.html" class="story-card">
-      <img src="betting-despite-odds.jpg.jpg">
+    <a href="betting-despite-odds.html" class="story-card romance">
+      <img src="story1bdo.jpg">
       <p>Betting Despite Odds</p>
     </a>
 
-    <a href="bus-and-letters.html" class="story-card">
+    <a href="bus-and-letters.html" class="story-card romance">
       <img src="bus-and-letters.jpg">
       <p>Bus and Letters</p>
     </a>
 
-    <a href="hopelessly-romantic-love.html" class="story-card">
+    <a href="hopelessly-romantic-love.html" class="story-card romance">
       <img src="hopelessly-romantic-love.jpg">
       <p>Hopelessly Romantic Love</p>
     </a>
 
-    <a href="tacenda-:-a-love-we-never-named.html" class="story-card">
+    <a href="tacenda-:-a-love-we-never-named.html" class="story-card series">
       <img src="tacenda-a-lov-ewe-never-named.jpg">
       <p>Tacenda: A Love We Never Named</p>
     </a>
 
   </div>
+
+  <!-- ⚙️ JAVASCRIPT -->
+  <script>
+    function searchStories() {
+      let input = document.getElementById("searchBar").value.toLowerCase();
+      let cards = document.getElementsByClassName("story-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        cards[i].style.display = text.includes(input) ? "block" : "none";
+      }
+    }
+
+    function filterStories(category) {
+      let cards = document.getElementsByClassName("story-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        if (category === "all") {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = cards[i].classList.contains(category) ? "block" : "none";
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
