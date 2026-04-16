@@ -72,18 +72,17 @@
       transition: 0.2s;
     }
 
-    .story-card img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
+   .story-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.2s;
+}
 
-    .story-card:hover img {
-      transform: scale(1.05);
-      transition: 0.2s;
-    }
-
+.story-card:hover img {
+  transform: scale(1.05);
+}
     .story-card p {
       margin-top: 10px;
       font-weight: bold;
@@ -152,28 +151,28 @@
 
   <!-- ⚙️ JAVASCRIPT -->
   <script>
-    function searchStories() {
-      let input = document.getElementById("searchBar").value.toLowerCase();
-      let cards = document.getElementsByClassName("story-card");
+function searchStories() {
+  let input = document.getElementById("searchBar").value.toLowerCase();
+  let cards = document.getElementsByClassName("story-card");
 
-      for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        cards[i].style.display = text.includes(input) ? "block" : "none";
-      }
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+    cards[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+
+function filterStories(category) {
+  let cards = document.getElementsByClassName("story-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    if (category === "all") {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = cards[i].classList.contains(category) ? "" : "none";
     }
-
-    function filterStories(category) {
-      let cards = document.getElementsByClassName("story-card");
-
-      for (let i = 0; i < cards.length; i++) {
-        if (category === "all") {
-          cards[i].style.display = "block";
-        } else {
-          cards[i].style.display = cards[i].classList.contains(category) ? "block" : "none";
-        }
-      }
-    }
-  </script>
+  }
+}
+</script>
 
 </body>
 </html>
