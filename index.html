@@ -57,89 +57,92 @@
 </header>
 
   <header>
-  <h1>Love, Saiki</h1>
-  <p>Author of emotional, aesthetic stories</p>
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saiki's Works</title>
 
-<div class="container">
+  <style>
+    /* 🌟 3-COLUMN GRID */
+    .story-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
 
-  <div class="section">
-    <div class="title">📖 About the Author</div>
-    <div class="card">
-      Hi, this is Sachi! I write stories filled with emotion, imagination, and meaning.
-      Each story is a small world meant to be felt, not just read.
-    </div>
+    /* 📦 STORY CARD */
+    .story-card {
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: 0.2s;
+    }
+
+    /* 🖼️ COVER IMAGE */
+    .story-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.2s;
+    }
+
+    /* ✨ HOVER EFFECT */
+    .story-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .story-card p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* 📱 TABLET */
+    @media (max-width: 768px) {
+      .story-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 📱 PHONE */
+    @media (max-width: 480px) {
+      .story-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 style="text-align:center;">Saiki's Works</h1>
+
+  <div class="story-container">
+
+    <a href="betting-despite-odds.html" class="story-card">
+      <img src="images/story1.jpg">
+      <p>Story 1</p>
+    </a>
+
+    <a href="bus-&-letters.html" class="story-card">
+      <img src="images/story2.jpg">
+      <p>Story 2</p>
+    </a>
+
+    <a href="hopelessly-romantic-love.html" class="story-card">
+      <img src="images/story3.jpg">
+      <p>Story 3</p>
+    </a>
+
+    <a href="tacenda-:-a-love-we-never-named.html" class="story-card">
+      <img src="images/story4.jpg">
+      <p>Story 4</p>
+    </a>
+
   </div>
-
-  <div class="section">
-    <div class="title">💌 Message to Readers</div>
-    <div class="card">
-      Thank you for reading my work. I hope my stories stay with you even after you close the page.
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  © Sachi/Saiki/Saichi— All stories written with heart
-</footer>
-
-<div class="container">
-
-  <div class="card">
-    <h3>Betting Despite Odds</h3>
-    <p>In a city where luck can make you a king—or cost you everything, 
-Kael is a mathematical prodigy with nothing to lose and everything to prove. When he stumbles into the underground world of high-skates gambling, 
-he discovers that winning isn't just about skill—it's about reading people, surviving deception, and risking more than money. 
-
-Guided by the enigmatic Selene, Kael must navigate dangerous rivals, shadowy alliances, and the seductive thrill of game. As the stakes rises, the line
-between fortune and survival blurs, and Kael learns that some bets are worth more than gold... and some odds are meant to be defied.
-
-A story of courage, cunning, and the gamble of life itself, "Betting Despite Odds" asks: how far would you go when the odds are stacked against you?</p>
-    <a class="btn" href="betting-despite-odds.html">Read</a>
-  </div>
-
-  <div class="card">
-    <h3>Bus & Lettes</h3>
-    <p>Every day, Hana rides the same bus... and every day she finds mysterious letters left behind for "The Passenger." Encouraging, secretive, sometimes
-heartbreaking, the letters speak to her in ways no one else can. 
-
-Curious, she begins replying—never knowing who's reading her words. But as their invisible bond grows, Hana realizes the writer isn't just anyone... and time is 
-running out before they might never meet.
-
-Some connection can only be found in letters... on a bus.</p>
-    <a class="btn" href=Bus & Letters.html">Read</a>
-  </div>
-
-  <div class="card">
-    <h3>Hopelessly Romantic Love</h3>
-    <p>Lia doesn't just believe in love—she lives for it. From memorizing love poems to imagining meet-cutes in the most ordinary moments, she's the kind of girl
-who sees romance everywhere. To her, every glance could mean something, every conversation could be the start of forever.
-
-But there's one problem: she always falls in love alone.
-
-Whether it's the boy who only sees her as a friend, the one who likes someone else, or the one who leaves without explanation—Liea keeps giving her heart to stories
-that were never meant to be hers. Still, she refuses to change. Because if loving deeply is a mistake, it's one she's willing to make over and over again.
-
-Everything shifts when she meets Eli, someone who reads her like an open book and challenges her beliefs about love. For the first time, Lia begins to question—
-does love gave to be painful to be real? Or has she been chasing the wrong kind of story all along?
-
-As her feelings grow, Lia must face the hardest truth she's ever known: sometimes, being a hopeless romantic means learning when to hold on... and when to finally let go.</p>
-    <a class="btn" href=Hopelessly Romantic Love.html">Read</a>
-  </div>
-
- <div class="card">
-    <h3>Tacenda: A Love We Never Named</h3>
-    <p>Solenne and Kendrick are best friends, bound by years of familiarity and unspoken understanding. But somewhere between shared routines, teasing arguments, and moments
-    that linger a little too long, something begins to shift.
-    
-    What was once simple friendship starts to feel heavier—harder to ignore, harder to explain. 
-    
-    And in the silence between them lives everything they never say... but both quietly feel.</p>
-    <a class="btn" href=Hopelessly Romantic Love.html">Read</a>
-  </div>
-  
-</div>
 
 </body>
 </html>
