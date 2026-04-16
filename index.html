@@ -1,69 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ToDream</title>
+  <title>To Dream</title>
 
   <style>
+    /* 🌊 PALE AQUA BACKGROUND */
     body {
+      background-color: #bfeeee;
       margin: 0;
-      font-family: Arial;
-      background-color: #f5f5f5;
+      font-family: Playfair Display, serif;
     }
 
-    header {
-      background-color: #222;
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .card {
-      background: white;
+    /* ✍️ AUTHOR MESSAGE BOX */
+    .author-box {
+      margin: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
       border-radius: 12px;
-      padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.2s;
     }
 
-    .card:hover {
-      transform: scale(1.03);
+    .author-box h2 {
+      margin-bottom: 10px;
     }
 
-    .btn {
-      display: inline-block;
+    /* 📚 TITLE */
+    h1 {
+      text-align: center;
       margin-top: 10px;
-      padding: 8px 12px;
-      background: #222;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
     }
-  </style>
-</head>
 
-<body>
-
-<header>
-  <h1>🌸 ToDream</h1>
-  <p>Read. Feel. Escape.</p>
-</header>
-
-  <header>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Saiki's Works</title>
-
-  <style>
-    /* 🌟 3-COLUMN GRID */
+    /* 🌟 STORY GRID (3 per row) */
     .story-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -76,7 +43,6 @@
       text-decoration: none;
       color: black;
       text-align: center;
-      font-family: Arial, sans-serif;
       transition: 0.2s;
     }
 
@@ -118,28 +84,39 @@
 
 <body>
 
-  <h1 style="text-align:center;">Saiki's Works</h1>
+  <!-- ✍️ AUTHOR MESSAGE -->
+  <div class="author-box">
+    <h2>Message from the Author</h2>
+    <p>
+      Welcome to my stories ✨<br>
+      Every story here is made with effort and emotion.<br>
+      Thank you for reading 💖
+    </p>
+  </div>
 
+  <h1>My Stories</h1>
+
+  <!-- 📚 STORIES -->
   <div class="story-container">
 
     <a href="betting-despite-odds.html" class="story-card">
       <img src="images/story1.jpg">
-      <p>Bettint Despite Odds1</p>
+      <p>Betting Despite Odds</p>
     </a>
 
-    <a href="bus-&-letters.html" class="story-card">
+    <a href="bus-and-letters.html" class="story-card">
       <img src="images/story2.jpg">
-      <p>Story 2</p>
+      <p>Bus and Letters</p>
     </a>
 
     <a href="hopelessly-romantic-love.html" class="story-card">
       <img src="images/story3.jpg">
-      <p>Story 3</p>
+      <p>Hopelessly Romantic Love</p>
     </a>
 
     <a href="tacenda-:-a-love-we-never-named.html" class="story-card">
       <img src="images/story4.jpg">
-      <p>Story 4</p>
+      <p>Tacenda: A Love We Never Named</p>
     </a>
 
   </div>
