@@ -30,12 +30,14 @@
       margin-top: 10px;
     }
 
-    /* 🌟 STORY GRID (3 per row) */
+     /* 📚 GRID (2 PER ROW) */
     .story-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr); 
       gap: 20px;
       padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     /* 📦 STORY CARD */
@@ -48,8 +50,8 @@
 
     /* 🖼️ COVER IMAGE */
     .story-card img {
-  width: 512%;
-  height: 800px;   
+  width: 100%;
+  height: 300px;   
   object-fit: cover;
   border-radius: 12px;
 }
