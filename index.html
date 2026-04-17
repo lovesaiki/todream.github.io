@@ -7,10 +7,31 @@
     body {
       background-color: #bfeeee;
       margin: 0;
-      font-family: Playfair Display, serif;
+      font-family: "Playfair Display", serif;
     }
 
-    /* 🔎 SEARCH BAR */
+    /* AUTHOR BOX */
+    .author-box {
+      margin: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0 5px;
+    }
+
+    /* TAGLINE */
+    .tagline {
+      text-align: center;
+      opacity: 0.7;
+      margin-bottom: 15px;
+    }
+
+    /* SEARCH */
     .search-box {
       display: flex;
       justify-content: center;
@@ -26,21 +47,7 @@
       outline: none;
     }
 
-    /* ✍️ AUTHOR BOX */
-    .author-box {
-      margin: 20px;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    /* 📂 CATEGORY BUTTONS */
+    /* CATEGORIES */
     .categories {
       text-align: center;
       margin: 10px;
@@ -50,80 +57,88 @@
       padding: 8px 12px;
       margin: 5px;
       border: none;
-      border-radius: 8px;
+      border-radius: 20px;
       cursor: pointer;
+      background: white;
+      transition: 0.2s;
     }
 
-    /* 📚 GRID */
+    .categories button:hover {
+      background: #2b2b2b;
+      color: white;
+    }
+
+    /* GRID */
     .story-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 110px;
+      gap: 20px;
       padding: 20px;
       max-width: 800px;
       margin: auto;
     }
 
-    /* 📦 CARD */
+    /* CARD */
     .story-card {
+      display: block;
+      background: white;
       text-decoration: none;
       color: black;
-      text-align: center;
-      transition: 0.2s;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-   .story-card img {
-  width: 125%;
-  height: 800px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: 0.2s;
-}
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
-.story-card:hover img {
-  transform: scale(1.05);
-}
+    .story-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
     .story-card p {
-      margin-top: 10px;
+      margin: 10px;
       font-weight: bold;
+      font-size: 15px;
+      text-align: center;
     }
 
-    /* 📱 MOBILE */
-   @media (max-width: 480px) {
-  .container {
-    padding: 20px;
-  }
+    /* MOBILE */
+    @media (max-width: 480px) {
+      .story-container {
+        grid-template-columns: 1fr;
+      }
 
-  .story-card img {
-    height: 250px;
-  }
-}
+      .story-card img {
+        height: 220px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ✍️ AUTHOR -->
+  <!-- AUTHOR -->
   <div class="author-box">
     <h2>Love, Saiki</h2>
-    <p>
-      Welcome to my little space where I share my stories. ✨<br>
-      Thank you for reading 💖
-    </p>
+    <p>Welcome to my little space where I share my stories. ✨<br>Thank you for reading 💖</p>
   </div>
 
   <h1>To Dream</h1>
+  <p class="tagline">Stories that linger beyond the last page.</p>
 
-  <p style="text-align:center; opacity:0.7; margin-top:-10px;">
-  Stories that linger beyond the last page.
-</p>
-
-  <!-- 🔎 SEARCH -->
+  <!-- SEARCH -->
   <div class="search-box">
     <input type="text" id="searchBar" placeholder="Find story..." onkeyup="searchStories()">
   </div>
 
-  <!-- 📂 CATEGORIES -->
+  <!-- CATEGORIES -->
   <div class="categories">
     <button onclick="filterStories('all')">All</button>
     <button onclick="filterStories('romance')">Romance</button>
@@ -131,7 +146,7 @@
     <button onclick="filterStories('crimethriller')">Crime Thriller</button>
   </div>
 
-  <!-- 🆕 NEW SECTION -->
+  <!-- STORIES -->
   <h2 style="text-align:center;">𓂃🪶 Works</h2>
 
   <div class="story-container">
@@ -158,30 +173,30 @@
 
   </div>
 
-  <!-- ⚙️ JAVASCRIPT -->
+  <!-- JS -->
   <script>
-function searchStories() {
-  let input = document.getElementById("searchBar").value.toLowerCase();
-  let cards = document.getElementsByClassName("story-card");
+    function searchStories() {
+      let input = document.getElementById("searchBar").value.toLowerCase();
+      let cards = document.getElementsByClassName("story-card");
 
-  for (let i = 0; i < cards.length; i++) {
-    let text = cards[i].innerText.toLowerCase();
-    cards[i].style.display = text.includes(input) ? "" : "none";
-  }
-}
-
-function filterStories(category) {
-  let cards = document.getElementsByClassName("story-card");
-
-  for (let i = 0; i < cards.length; i++) {
-    if (category === "all") {
-      cards[i].style.display = "";
-    } else {
-      cards[i].style.display = cards[i].classList.contains(category) ? "" : "none";
+      for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        cards[i].style.display = text.includes(input) ? "" : "none";
+      }
     }
-  }
-}
-</script>
+
+    function filterStories(category) {
+      let cards = document.getElementsByClassName("story-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        if (category === "all") {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = cards[i].classList.contains(category) ? "" : "none";
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
