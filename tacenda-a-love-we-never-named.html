@@ -60,7 +60,7 @@
       font-size: 17px;
     }
 
-    /* CARDS (synopsis, notes, chapters) */
+    /* SYNOPSIS CARD ONLY */
     .card {
       margin-top: 20px;
       padding: 18px;
@@ -81,6 +81,18 @@
       text-align: center;
     }
 
+    /* AUTHOR NOTE (NO BOX — CLEAN TEXT) */
+    .author-note {
+      margin-top: 25px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .author-note h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
     /* CHAPTER LINKS */
     .chapter-link {
       display: block;
@@ -99,7 +111,7 @@
       transform: translateX(5px);
     }
 
-    /* MOBILE IMPROVEMENTS */
+    /* MOBILE */
     @media (max-width: 600px) {
       .banner {
         height: 160px;
@@ -111,15 +123,6 @@
 
       .container {
         padding: 12px;
-      }
-
-      .card {
-        padding: 15px;
-      }
-
-      .chapter-link {
-        font-size: 14px;
-        padding: 10px;
       }
     }
   </style>
@@ -138,21 +141,19 @@
 <!-- TITLE -->
 <h1>Tacenda: A Love We Never Named</h1>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <!-- SYNOPSIS -->
+  <!-- SYNOPSIS (STAYS BOXED) -->
   <div class="card">
     <h3>Synopsis</h3>
     <p>
       Solenne and Kendrick are best friends bound by a love they never dared to confess.<br><br>
-      Every silence between them carries the weight of what could have been, every glance a promise left unspoken.<br><br>
-      Tacenda is a story of love preserved in silence… but when silence becomes the only language—is it protection, or surrender?
+      Tacenda is a story of silence, almost-love, and everything left unsaid.
     </p>
   </div>
 
-  <!-- AUTHOR NOTE -->
-  <div class="card">
+  <!-- AUTHOR NOTE (NO BOX) -->
+  <div class="author-note">
     <h3>Author's Note</h3>
     <p>
       Hi, this is Sachi!<br><br>
@@ -166,33 +167,13 @@
   <div class="card">
     <h3>Chapters</h3>
 
-    <a href="tacenda-prologue.html" class="chapter-link">
-      Prologue — Sun Behind The Clouds
-    </a>
-
-    <a href="tacenda-intro.html" class="chapter-link">
-      Intro
-    </a>
-
-    <a href="tacenda-ch1.html" class="chapter-link">
-      Chapter 1 — The Start of Us
-    </a>
-
-    <a href="tacenda-ch2.html" class="chapter-link">
-      Chapter 2 — Let the Moon and Stars Be the Keeper of Our Secrets
-    </a>
-
-    <a href="tacenda-ch3.html" class="chapter-link">
-      Chapter 3 — Eyes Never Lie
-    </a>
-
-    <a href="tacenda-ch4.html" class="chapter-link">
-      Chapter 4 — Helplessly In Love
-    </a>
-
-    <a href="tacenda-ch5.html" class="chapter-link">
-      Chapter 5 —
-    </a>
+    <a href="tacenda-prologue.html" class="chapter-link">Prologue — Sun Behind The Clouds</a>
+    <a href="tacenda-intro.html" class="chapter-link">Intro</a>
+    <a href="tacenda-ch1.html" class="chapter-link">Chapter 1 — The Start of Us</a>
+    <a href="tacenda-ch2.html" class="chapter-link">Chapter 2 — Let the Moon and Stars Be the Keeper of Our Secrets</a>
+    <a href="tacenda-ch3.html" class="chapter-link">Chapter 3 — Eyes Never Lie</a>
+    <a href="tacenda-ch4.html" class="chapter-link">Chapter 4 — Helplessly In Love</a>
+    <a href="tacenda-ch5.html" class="chapter-link">Chapter 5 —</a>
 
   </div>
 
